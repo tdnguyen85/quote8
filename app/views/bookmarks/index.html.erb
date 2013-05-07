@@ -1,0 +1,41 @@
+<h1>Listing bookmarks</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Title</th>
+    <th>Quote</th>
+    <th>Tags</th>
+    <th>Retrieved on</th>
+    <th>Published on</th>
+    <th>Author first name</th>
+    <th>Author last name</th>
+    <th>Publisher</th>
+    <th>String</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bookmarks.each do |bookmark| %>
+  <tr>
+    <td><%= bookmark.url %></td>
+    <td><%= bookmark.title %></td>
+    <td><%= bookmark.quote %></td>
+    <td><%= bookmark.tag_list %></td>
+    <td><%= bookmark.retrieved_on %></td>
+    <td><%= bookmark.published_on %></td>
+    <td><%= bookmark.author_first_name %></td>
+    <td><%= bookmark.author_last_name %></td>
+    <td><%= bookmark.publisher %></td>
+    <td><%= bookmark.string %></td>
+    <td><%= link_to 'Show', bookmark %></td>
+    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+    <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
