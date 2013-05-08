@@ -1,9 +1,17 @@
 Quote8::Application.routes.draw do
+
+  get 'bookmarks/new_window', to: "bookmarks#new_window"
+
   resources :bookmarks
 
+  get 'bookmarks/:id', to: "bookmarks#show_window"
 
   devise_for :users
+
   root :to => 'bookmarks#index'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

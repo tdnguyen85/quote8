@@ -15,7 +15,13 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
+
     @bookmark = Bookmark.find(params[:id])
+
+    if params[:bookmarklet]
+      render 'show_window'
+      return
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,16 +29,40 @@ class BookmarksController < ApplicationController
     end
   end
 
+  # def show_window
+  #   @bookmark = Bookmark.find(params[:id])
+
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @bookmark }
+  #   end
+  # end
+
+
   # GET /bookmarks/new
   # GET /bookmarks/new.json
   def new
     @bookmark = Bookmark.new :url => params[:url], :title => params[:title], :quote => params[:text]
+
+    if params[:bookmarklet]
+      @bookmark = Bookmark.new :url => params[:url], :title => params[:title], :quote => params[:text]
+      render 'new_window'
+      return
+    end
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bookmark }
     end
   end
+
+  # def new_window
+  #   @bookmark = Bookmark.new :url => params[:url], :title => params[:title], :quote => params[:text]
+  #   respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: @bookmark }
+  #   end
+  # end
 
   # GET /bookmarks/1/edit
   def edit
@@ -43,6 +73,11 @@ class BookmarksController < ApplicationController
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
+
+    if params[:bookmarklet]
+      render 'show_window'
+      return
+    end
 
     respond_to do |format|
       if @bookmark.save
