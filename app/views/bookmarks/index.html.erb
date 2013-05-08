@@ -1,8 +1,12 @@
 <header class="row">
-<div class="large-12 columns">
-  <div class="panel">
+  <div class="large-12 columns">
+    <div class="panel">
     <%= image_tag("quote8_logo.png", :size =>"50x50") %>
- </div>
+    <div class="right">
+      <%= render 'logout' %>
+    </div>
+    </div>
+  </div>
 </header>
   <div class="row">
     <div class="large-3 columns ">
@@ -32,10 +36,11 @@
        </div>
     </div>
     <div class="large-9 columns">
+      <% @bookmarks.each do |bookmark| %>
       <div class="row">
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <p><strong>"</strong><%= bookmark.quote %><strong>"</strong></p>
           <ul class="inline-list">
             <li><a href="">Reply</a></li>
             <li><a href="">Share</a></li>
@@ -43,32 +48,7 @@
          </div>
       </div>
       <hr />
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End Feed Entry -->
-
-      <hr />
-
-      <!-- Feed Entry -->
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
-         </div>
-      </div>
-      <!-- End Feed Entry -->
+      <% end %>
     </div>
      <aside class="large-3 columns hide-for-small">
       <p></p>
