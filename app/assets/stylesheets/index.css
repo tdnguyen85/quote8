@@ -1,0 +1,74 @@
+body{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header{
+  width: 80%;
+  margin: auto;
+}
+
+#logo{
+  background-image: url("http://upload.wikimedia.org/wikipedia/commons/1/1c/Quotation_Marks.svg");
+  background-size: 100px 100px;
+  float: left;
+  font-size: 45px;
+  font-weight: 1200;
+  width: 100px;
+  height: auto;
+}
+
+#user_control{
+  float: right;
+  margin-right: 50px;
+}
+
+.container{
+  width: 1024px;
+  margin: auto;
+  margin-top: 50px;
+  height: 800px;
+}
+
+.span2{
+  width: 16.67%;
+  float: left;
+}
+
+.tagist{
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.tags{
+  line-height: 30px;
+  border: 1px dashed #222 ;
+  border-radius: 10px;
+}
+
+ul{
+  list-style: none;
+}
+.span8{
+  width: 66.67%;
+  float: left;
+}
+
+.quote_list{
+  margin: 20px;
+}
+
+.quotes{
+  margin: 20px;
+}
+
+.quotes:before{
+  content: '"';
+}
+
+.quotes:after{
+  content: '"';
+}
+
+.logout{
+  float: right;
+}
