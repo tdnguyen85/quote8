@@ -7,7 +7,11 @@ header{
   margin: auto;
 }
 
-#logo{
+.logo{
+  width: 25px;
+}
+
+/*#logo{
   background-image: url("http://upload.wikimedia.org/wikipedia/commons/1/1c/Quotation_Marks.svg");
   background-size: 100px 100px;
   float: left;
@@ -16,7 +20,7 @@ header{
   width: 100px;
   height: auto;
 }
-
+*/
 #user_control{
   float: right;
   margin-right: 50px;
