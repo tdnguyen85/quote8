@@ -4,7 +4,11 @@ class BookmarksController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @bookmarks = Bookmark.all
+    if params[:tag]
+      @bookmarks = Bookmark.tagged_with(params[:tag])
+    else
+      @bookmarks = Bookmark.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -76,6 +80,7 @@ class BookmarksController < ApplicationController
 
     if params[:bookmarklet]
       render 'show_window'
+      @bookmark.save
       return
     end
 
@@ -116,5 +121,12 @@ class BookmarksController < ApplicationController
       format.html { redirect_to bookmarks_url }
       format.json { head :no_content }
     end
+  end
+
+  def sort
+    params[:bookmark].each_with_index do |id, index|
+      Faq.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
   end
 end

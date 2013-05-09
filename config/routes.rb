@@ -2,7 +2,11 @@ Quote8::Application.routes.draw do
 
   get 'bookmarks/new_window', to: "bookmarks#new_window"
 
-  resources :bookmarks
+  resources :bookmarks do
+    collection { post :sort }
+  end
+
+  get 'tags/:tag', to: 'bookmarks#index', as: :tag
 
   get 'bookmarks/:id', to: "bookmarks#show_window"
 
