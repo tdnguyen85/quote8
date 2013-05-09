@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+$k_grey: #4B5358;
+$k_blue: #6BC3D7;
+$k_light_blue: #A8D7CF;
+$k_light_orange: #F1B897;
+$k_orange: #F1762F;
