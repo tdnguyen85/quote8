@@ -79,6 +79,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(params[:bookmark])
 
     if params[:bookmarklet]
+      @bookmark.save
       render 'show_window'
       @bookmark.save
       return
