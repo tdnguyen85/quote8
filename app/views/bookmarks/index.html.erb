@@ -1,5 +1,5 @@
 <header class="row">
-  <div class="large-12 columns">
+  <div class="columns">
     <div class="panel">
     <%= image_tag("quote8_logo.png", :size =>"100x100") %>
     <div class="right">
@@ -47,7 +47,9 @@
       <div class="row" id="bookmark_<%= bookmark.id %>">
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
-          <p><strong>"</strong><%= bookmark.quote %><strong>"</strong></p>
+          <a href="/bookmarks/<%= bookmark.id %>" class="quote">
+            <p><strong>"<%= bookmark.quote %></strong>"</p>
+          </a>
           <ul class="inline-list">
             <li><a href="">Reply</a></li>
             <li><a href="">Share</a></li>
@@ -56,6 +58,7 @@
               <% end %>
               </a></li>
               Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+            <li><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
          </div>
       </div>
