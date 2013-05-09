@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @bookmark.url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @bookmark.title %>
+</p>
+
+<p>
+  <b>Quote:</b>
+  <%= @bookmark.quote %>
+</p>
+<p>
+  <b>Tags:</b>
+  <%= @bookmark.tag_list %>
+</p>
+<p>
+  <b>Retrieved on:</b>
+  <%= @bookmark.retrieved_on %>
+</p>
+
+<p>
+  <b>Published on:</b>
+  <%= @bookmark.published_on %>
+</p>
+
+<p>
+  <b>Author first name:</b>
+  <%= @bookmark.author_first_name %>
+</p>
+
+<p>
+  <b>Author last name:</b>
+  <%= @bookmark.author_last_name %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @bookmark.publisher %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>

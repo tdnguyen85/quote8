@@ -2,37 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$grey: #4B5358;
+$blue: #6BC3D7;
+$light_blue: #A8D7CF;
+$light_orange: #F1B897;
+$orange: #F1762F;
+
 body{
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-strong{
-  letter-spacing: 0.125em;
-}
-
-header{
+.row header{
   width: 80%;
   margin: auto;
+}
+
+.top-bar{
+  background-color: $grey;
 }
 
 .logo{
   width: 25px;
 }
 
-/*
-  #logo{
-    background-image: url("http://upload.wikimedia.org/wikipedia/commons/1/1c/Quotation_Marks.svg");
-    background-size: 100px 100px;
-    float: left;
-    font-size: 45px;
-    font-weight: 1200;
-    width: 100px;
-    height: auto;
-  }
-*/
+h4{
+  display: inline;
+}
 
 #tag_cloud {
-  width: 400px;
   line-height: 1.6em;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
@@ -80,10 +77,15 @@ ul{
 }
 
 .quote{
-  letter-spacing: 0.125em;
   color: #222;
+  font-family: 'Lobster', cursive;
+  font-size: 27px;
 }
 
 .logout{
   float: right;
+}
+
+[class*="block-grid-"] > li{
+  height: 100px;
 }

@@ -1,4 +1,18 @@
-<header class="row">
+  <header class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="/">
+            <%= image_tag("quote8_logo_white.png", :size =>"45x45") %>
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+  </header>
+
+<!-- <header class="row">
   <div class="columns">
     <div class="panel">
     <%= image_tag("quote8_logo.png", :size =>"100x100") %>
@@ -7,7 +21,7 @@
     </div>
     </div>
   </div>
-</header>
+</header> -->
   <div class="row">
     <div class="large-3 columns ">
       <div class="panel">
@@ -42,8 +56,6 @@
     </div>
     <div class="large-9 columns" id="bookmarks" data-update-url="<%= sort_bookmarks_url %>">
       <% @bookmarks.each do |bookmark| %>
-      <%= bookmark.id %>
-      <span class="handle">[drag]</span>
       <div class="row" id="bookmark_<%= bookmark.id %>">
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
@@ -53,12 +65,18 @@
           <ul class="inline-list">
             <li><a href="">Reply</a></li>
             <li><a href="">Share</a></li>
-            <li><a href=""><% bookmark.tag_list.each do |tag| %>
-              <button><%= tag %></button>
-              <% end %>
-              </a></li>
-              Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-            <li><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <li>
+              <a href="">
+                <% bookmark.tag_list.each do |tag| %>
+                  <button><%= tag %></button>
+                  <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+                <% end %>
+                </a>
+            </li>
+
+            <li>
+              <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
           </ul>
          </div>
       </div>
