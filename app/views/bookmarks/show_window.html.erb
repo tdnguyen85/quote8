@@ -10,6 +10,12 @@
   <%= @bookmark.quote %>
 </p>
 
-<a href="self.close ()">Close this "8 Window</a>
 
-<%= link_to 'Goto Quote8', bookmarks_path %>
+<a href="JavaScript:window.close()">Close</a>
+
+<%= link_to 'Goto Quote8', bookmarks_path, :target => '_blank'%>
+
+
+<script>
+setTimeout('self.close();',15000);
+</script>
