@@ -1,5 +1,7 @@
 Quote8::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   get 'bookmarks/new_window', to: "bookmarks#new_window"
 
   resources :bookmarks do
