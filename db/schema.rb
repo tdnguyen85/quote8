@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507232939) do
+ActiveRecord::Schema.define(:version => 20130509012649) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "url"
@@ -22,10 +22,23 @@ ActiveRecord::Schema.define(:version => 20130507232939) do
     t.string   "author_first_name"
     t.string   "author_last_name"
     t.string   "publisher"
-    t.string   "string"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "position"
   end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
