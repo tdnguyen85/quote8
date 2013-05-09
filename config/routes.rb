@@ -12,7 +12,10 @@ Quote8::Application.routes.draw do
 
   devise_for :users
 
-  root :to => 'bookmarks#index'
+  root :to => 'pages#index', :as => :frontlanding
+
+  get '/about' => 'pages#about', :as => :about
+
 
 
 

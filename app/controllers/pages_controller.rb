@@ -1,6 +1,6 @@
-class BookmarksController < ApplicationController
+class PagesController < ApplicationController
 
-  def landing_page
+  def index
 
   end
 
