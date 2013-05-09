@@ -9,11 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require foundation.css
+ *= require bookmarks.css.scss
  */
-
-$k_grey: #4B5358;
-$k_blue: #6BC3D7;
-$k_light_blue: #A8D7CF;
-$k_light_orange: #F1B897;
-$k_orange: #F1762F;
