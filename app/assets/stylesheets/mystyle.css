@@ -1,5 +1,3 @@
-
-
 button, .button {
  background-color: #6BC3D7;
  border-radius: 45px;
@@ -49,11 +47,10 @@ footer {
 p {
 	margin: 20px;
 }
-.inline-list > li > * {
+/*.inline-list > li > * {
 	display: inline;
 	padding: 25px;
-	
-}
+}*/
 #user_nav {
 	padding: 20px;
 margin: 0;

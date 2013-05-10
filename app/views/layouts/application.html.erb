@@ -7,10 +7,19 @@
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
+    <script>
+    $(document).ready(function() {
+      
+    $("#shake").mouseenter(function () {
+        $(this).effect("shake", { times:3 }, 1000);
+    });
+
+    });
+    </script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
 <%= render "layouts/navigation" %>
 
 
