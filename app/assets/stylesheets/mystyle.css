@@ -1,7 +1,8 @@
+
 button, .button {
  background-color: #6BC3D7;
- border-radius: 45px;
- margin-top: 10px;
+ border-radius: 25px;
+ margin-top: 0px;
  border-style: none;
 }
 
@@ -13,6 +14,7 @@ button, .button {
 body {
  padding-bottom: 20px;
  color: #F1762F;
+ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .top-bar {
@@ -53,7 +55,7 @@ p {
 }*/
 #user_nav {
 	padding: 20px;
-margin: 0;
+  margin: 0;
 
 }
 .arrow {

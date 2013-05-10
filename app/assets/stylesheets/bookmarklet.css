@@ -1,15 +1,20 @@
-#arrow {
+
+#bookmarklet-container {
+  positon: relative;
+  border: 1px dotted #f0f;
+  width: 500px;
+  margin: auto;
+
+}
+
+#bookmarklet-arrow {
   position: absolute;
   left: 40px;
   top: -120px;
+  margin:auto;
 }
 
-#container {
-  positon: relative;
-  border: 1px dotted #f0f;
-  width: 100px;
-}
-
-#button {
+#bookmarklet-button {
   font-size: 36px;
+    padding: 45px;
 }

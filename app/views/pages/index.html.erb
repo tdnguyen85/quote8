@@ -21,38 +21,43 @@
 <body>
 
   <!-- Main Page Content and Sidebar -->
+  <div class="row"> 
+    <div class="four columns">
+    <%= render 'bookmarklet' %>
+    </div>
+  </div>
 
   <div class="row">
-    <!-- Contact Details -->
-    <div class="large-7 columns">
-      <h3>Quote8</h3>
-      <p>Quickly store your favorite quotes from all over.</p>
-      <img src="../assets/screen2.png">
+    <h3>Quote8</h3>
+      <!-- Contact Details -->
+    <div class="four columns centered">
+        <img src="../assets/screen2.png">
       <div class="section-container tabs" data-section>
       </div>
     </div>
+  </div>
 
-    <%= render 'bookmarklet' %>
+   
 
     <!-- Sidebar Form -->
-<div> 
+  <div class="row"> 
 
-  <div class="large-5 columns">
+    <div class="four columns centered">
 
-    <form  action="../users" method="post">
-      <fieldset>
-      <legend>Signup</legend>
-      <input type="text" name="user[email]" placeholder="Your Email">
-      <input type="password" name="user[password]" placeholder="Password">
-      <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
-      <button class="sign_up" type="submit">Sign Up</button>
-      <p>Already a member? <a href="/users/sign_in">Log In</a>
-      </fieldset>
-    </form>
-  </div>
-    <!-- End Sidebar -->
- </div>
-</div>
+      <form  action="../users" method="post">
+        <fieldset>
+        <legend>Signup</legend>
+        <input type="text" name="user[email]" placeholder="Your Email">
+        <input type="password" name="user[password]" placeholder="Password">
+        <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
+        <button class="sign_up" type="submit">Sign Up</button>
+        <p>Already a member? <a href="/users/sign_in">Log In</a>
+        </fieldset>
+      </form>
+    </div>
+      <!-- End Sidebar -->
+   </div>
+
 
   <!-- End Main Content and Sidebar -->
 
