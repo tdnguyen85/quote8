@@ -5,9 +5,10 @@ class BookmarksController < ApplicationController
 
   def index
     if params[:tag]
-      @bookmarks = Bookmark.tagged_with(params[:tag])
+      @bookmarks = Bookmark.tagged_with(params[:tag]).order('position')
+
     else
-      @bookmarks = Bookmark.all
+      @bookmarks = Bookmark.order('position').reverse
     end
 
     respond_to do |format|
