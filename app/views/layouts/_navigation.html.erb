@@ -1,0 +1,25 @@
+<nav class="top-bar">
+  <ul class="title-area">
+  <!-- Title Area -->
+    <li class="name">
+      <h1>
+        <a href="#">
+          <img src="../assets/quote8_logo_white.png" width="30px"> Quote8
+        </a>
+      </h1>
+    </li>
+ <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li> 
+  </ul>
+  <div class="row">
+   <div class="inline-list right">
+    <div id="user_nav">
+     <li>  <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

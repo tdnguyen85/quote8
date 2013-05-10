@@ -3,14 +3,37 @@
 <head>
   <title>Quote8</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+<%= render "layouts/navigation" %>
+
+
+<!-- body -->
 
 <%= yield %>
 
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; "8"</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><%= link_to 'My Quotes', bookmarks_path %></li>
+            <li><%= link_to 'About', about_path %></li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

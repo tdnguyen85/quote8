@@ -1,0 +1,65 @@
+
+
+button, .button {
+ background-color: #6BC3D7;
+ border-radius: 45px;
+ margin-top: 10px;
+ border-style: none;
+}
+
+.top-bar-section li a:not(.button) {
+ background-color: #4B5358; 
+ color: #F1762F;
+}
+
+body {
+ padding-bottom: 20px;
+ color: #F1762F;
+}
+
+.top-bar {
+background-color: #4B5358;
+border-bottom: 5px solid #6BC3D7;
+height: 55px;
+}
+.top-bar a {
+	color: white;
+}
+fieldset legend {
+	text-align: center;
+}
+.member_login {
+  color: #F1762F;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+fieldset {
+	 border-radius: 20px;
+	 margin: 20px;
+}
+input {
+	border-radius: 8px;
+}
+footer {
+	color: #4B5358;
+}
+.round a{
+	color: white;
+}
+p {
+	margin: 20px;
+}
+.inline-list > li > * {
+	display: inline;
+	padding: 25px;
+	
+}
+#user_nav {
+	padding: 20px;
+margin: 0;
+
+}
+.arrow {
+	position: relative;
+	display: inline;
+}

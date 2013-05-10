@@ -1,14 +1,68 @@
-<p>Hello World Landing Page</p>
 
-<p><a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/jsbookmarklet.js?q=Math.random()';})();">Quotelet</a></p>
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
 
-<p>Cras eu nisi congue risus congue porttitor ut at velit. Pellentesque a nisl eget dui adipiscing viverra ut viverra odio. Pellentesque vestibulum bibendum congue. Nunc ac orci lorem. Aenean aliquet vulputate leo in scelerisque. Mauris elementum, orci nec luctus dapibus, erat nibh condimentum ligula, eget rutrum felis sapien sed dolor. Curabitur commodo lacus et odio commodo eu accumsan orci gravida. Vestibulum at mi nec sapien commodo facilisis. Mauris in tristique lectus. Donec blandit, quam a adipiscing ultricies, eros sem hendrerit sapien, in ultricies arcu orci sit amet dolor. Nunc ullamcorper, augue nec placerat facilisis, nulla quam bibendum metus, eget accumsan odio massa eu felis. Cras diam mi, aliquam in adipiscing ac, hendrerit ac lectus.</p>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-<p>Nullam placerat turpis at leo tristique in aliquam massa semper. Sed consectetur erat at tellus placerat suscipit. Sed molestie arcu enim. Pellentesque pretium, erat a porttitor pretium, augue ligula euismod urna, ac lobortis nulla neque et nunc. Nulla facilisi. Nam tempus mauris a tellus porttitor eu tristique massa hendrerit. Vivamus semper velit non turpis tempor vel imperdiet mauris scelerisque. Pellentesque libero justo, malesuada vel accumsan a, tempor a massa. Ut leo odio, tincidunt at eleifend eu, pulvinar condimentum leo. Vivamus non nisl in enim gravida consectetur. Maecenas dapibus risus vel felis commodo placerat.</p>
+  <title>Quote 8</title>
+
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="assets/foundation.css">
+  <link rel="stylesheet" href="assets/mystyle.css">
 
 
+  <script src="js/vendor/custom.modernizr.js"></script>
 
-<p>Goto</p>
-<p><%= link_to 'All Quotes Page', bookmarks_path %><p>
-<p><%= link_to 'About Quotes Page', about_path %><p>
+</head>
+<body>
 
+  <!-- Main Page Content and Sidebar -->
+
+  <div class="row">
+    <!-- Contact Details -->
+    <div class="large-7 columns">
+      <h3>Quote8</h3>
+      <p>Quickly store your favorite quotes from all over.</p>
+      <img src="assets/screen2.png">
+      <div class="section-container tabs" data-section>
+      </div>
+    </div>
+
+    <div class="arrow">
+    <img src="assets/arrow_f1762fsm.png" />
+
+      <button class="round"><img src="assets/quote8_logo_white.png" width="30px" /><a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/jsbookmarklet.js?q=Math.random()';})();"> Quotelet</a></button>
+   
+ 
+    </div> 
+  
+    <!-- Sidebar Form -->
+<div> 
+
+  <div class="large-5 columns">
+
+    <form  action="../users" method="post">
+      <fieldset>
+      <legend>Signup</legend>
+      <input type="text" name="user[email]" placeholder="Your Email">
+      <input type="password" name="user[password]" placeholder="Password">
+      <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
+      <button class="sign_up" type="submit">Sign Up</button>
+      <p>Already a member? <a href="/users/sign_in">Log In</a>
+      </fieldset>
+    </form>
+  </div>
+    <!-- End Sidebar -->
+ </div>
+</div>
+
+  <!-- End Main Content and Sidebar -->
+
+
+  <!-- Footer -->
+</body>
+</html>
