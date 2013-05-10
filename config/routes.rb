@@ -4,6 +4,8 @@ Quote8::Application.routes.draw do
 
   get 'bookmarks/new_window', to: "bookmarks#new_window"
 
+  get 'bookmarks/search' => 'bookmarks#search', :as => :search
+
   resources :bookmarks do
     collection { post :sort }
   end
@@ -18,7 +20,7 @@ Quote8::Application.routes.draw do
 
   get '/about' => 'pages#about', :as => :about
 
-
+  # get '/search' => 'bookmarks#search', :as => :search
 
 
   # The priority is based upon order of creation:
