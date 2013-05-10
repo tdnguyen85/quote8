@@ -1,74 +1,104 @@
-<!-- Nav and Banner -->
-  <nav class="top-bar">
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1>
-          <a href="/">
-            <%= image_tag("quote8_logo_white.png", :size =>"45x45") %>
-          </a>
-        </h1>
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <a href="/">
+          <%= image_tag("quote8_logo_white.png", :size =>"45x45") %>
+        </a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+</nav>
+
+<div class="row">
+  <div class="large-12 columns">
+    <blockquote class="quote">
+      <%= @bookmark.quote %>
+    </blockquote>
+    <div class="right">
+      <a href="#" data-reveal-id="apa" class="small button">APA</a>
+      <a href="#" data-reveal-id="mla" class="small button">MLA</a>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 columns">
+    <h4><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a>
+    </h4>
+     <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+    <p><a href="<%= @bookmark.url %>" class="secondary small button">View Original Page &rarr;</a></p>
+   </div>
+
+  <div class="large-4 columns">
+    <ul class="small-block-grid-2">
+      <li>Saved on:<br><%= @bookmark.retrieved_on %></li>
+      <li>Published on:<br><%= @bookmark.published_on %></li> <li>
+        Author:<br><%= @bookmark.author_first_name %><br><%= @bookmark.author_last_name %>
       </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <li>
+        Publisher:<br><%= @bookmark.publisher %>
+      </li>
     </ul>
-  </nav>
-
-  <div class="row">
-    <div class="large-12 columns">
-      <blockquote class="quote">
-        <%= @bookmark.quote %>
-      </blockquote>
-      <p><img src="http://placehold.it/1000x400&text=[banner img]" /></p>
+    <div class="right">
+      <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+      <%= link_to 'Back', bookmarks_path %>
     </div>
   </div>
+</div>
 
-  <div class="row">
-
-    <div class="large-8 columns">
-      <h4><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a>
-      </h4>
-       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-      <p><a href="<%= @bookmark.url %>" class="secondary small button">View Original Page &rarr;</a></p>
-    </div>
-
-    <div class="large-4 columns">
-
-      <!-- Gallery sidebar with a block grid. Note: block grid items should be the same size for optimal results -->
-
-      <ul class="small-block-grid-2">
-        <li>Retrieved on:<br><%= @bookmark.retrieved_on %></li>
-        <li>Published on:<br><%= @bookmark.published_on %></li> <li>
-          Author:<br><%= @bookmark.author_first_name %><br><%= @bookmark.author_last_name %>
-        </li>
-        <li>
-          Publisher:<br><%= @bookmark.publisher %>
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-6 columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
-            <li><a href="#">Link 6</a></li>
-            <li><a href="#">Link 7</a></li>
-          </ul>
-        </div>
+<footer class="row">
+  <div class="large-12 columns">
+    <hr />
+    <div class="row">
+      <div class="large-6 columns">
+        <p>&copy; Copyright Spcific assembly 2013.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+          <li><a href="#">Link 5</a></li>
+          <li><a href="#">Link 6</a></li>
+          <li><a href="#">Link 7</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
+<div class="reveal-modal-bg" style="opacity: 0; display: none;"></div>
+<div id="mla" class="reveal-modal">
+   <h2>MLA Format</h2>
+    <p id="mla_format">
+      <%= @bookmark.author_last_name %>, <%= @bookmark.author_first_name %>. "<%= @bookmark.title %>." <%= @bookmark.publisher %>, (<%= @bookmark.published_on%>). Web. <%= @bookmark.retrieved_on %>.
+    </p>
+    <script language="JavaScript">
+      function copyToClipboard (text) {
+      window.prompt ("Copy to clipboard: Ctrl+C, Enter", text);
+      }
+    </script>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="apa" class="reveal-modal">
+  <h2>APA Format</h2>
+  <p id="apa_quote">
+    <%= @bookmark.author_last_name %>, <%= @bookmark.author_first_name %> (<%= @bookmark.published_on%>). <%= @bookmark.title %>. Retrieved <%= @bookmark.retrieved_on %>.
+  </p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div class="reveal-modal-bg" style="opacity: 0; display: none;"></div>
+
+<%= javascript_include_tag "zepto" %>
+<%= javascript_include_tag "foundation" %>
+<%= javascript_include_tag "foundation.reveal" %>
+<!--
+<script language="JavaScript">
+  document.write('<script src=/assets/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>-->

@@ -32,7 +32,6 @@ class BookmarksController < ApplicationController
       format.json { render json: @bookmark }
     end
   end
-
   # def show_window
   #   @bookmark = Bookmark.find(params[:id])
 

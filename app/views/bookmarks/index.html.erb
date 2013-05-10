@@ -12,16 +12,6 @@
     </ul>
   </header>
 
-<!-- <header class="row">
-  <div class="columns">
-    <div class="panel">
-    <%= image_tag("quote8_logo.png", :size =>"100x100") %>
-    <div class="right">
-      <%= render 'logout' %>
-    </div>
-    </div>
-  </div>
-</header> -->
   <div class="row">
     <div class="large-3 columns ">
       <div class="panel">
@@ -59,8 +49,8 @@
       <div class="row" id="bookmark_<%= bookmark.id %>">
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
-          <a href="/bookmarks/<%= bookmark.id %>" class="quote">
-            <p><strong>"<%= bookmark.quote %></strong>"</p>
+          <a href="/bookmarks/<%= bookmark.id %>" class>
+            <blockquote class="quote"><%= bookmark.quote %></blockquote>
           </a>
           <ul class="inline-list">
             <li><a href="">Reply</a></li>
