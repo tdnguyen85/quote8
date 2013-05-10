@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'acts_as_list'
+gem 'twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.

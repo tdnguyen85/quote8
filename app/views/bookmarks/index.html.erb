@@ -13,60 +13,44 @@
         <a href="/user"><img src="http://www.scottlab.com/uploads/images/blank_profile.png"></a>
         <h5><a href="#">John Doe</a></h5>
           <div id="tag_cloud" class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-          <section class="section">
             <% tag_cloud Bookmark.tag_counts, %w[s m l] do |tag, css_class| %>
+          <section class="section">
+            <h5 class="title">
               <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            </h5>
+          </section>
             <% end %>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 1</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 2</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 3</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 4</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 5</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Tag 6</a></h5>
-          </section>
         </div>
        </div>
     </div>
-    <div class="large-9 columns" id="bookmarks" data-update-url="<%= sort_bookmarks_url %>">
-      <% @bookmarks.each do |bookmark| %>
-      <div class="row" id="bookmark_<%= bookmark.id %>">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
-          <a href="/bookmarks/<%= bookmark.id %>" class="quote">
-            <p><strong>"<%= bookmark.quote %></strong>"</p>
-          </a>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-            <li>
-              <a href="">
-                <% bookmark.tag_list.each do |tag| %>
-                  <button><%= tag %></button>
-                  <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-                <% end %>
+    <div class="large-9 columns" >
+      <ul id="bookmarks" data-update-url="<%= sort_bookmarks_url %>">
+        <% @bookmarks.each do |bookmark| %>
+          <li id="bookmark_<%= bookmark.id %>">
+            <div class="row" >
+              <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+              <div class="large-10 columns">
+                <a href="/bookmarks/<%= bookmark.id %>" class="quote">
+                  <p><strong>"<%= bookmark.quote %></strong>"</p>
                 </a>
-            </li>
+                <ul>
+                  <li>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
+                  <%= bookmark.position %>
+                </ul>
+                <ul class="inline-list">
 
-            <li>
-              <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </li>
-          </ul>
-         </div>
-      </div>
-      <hr />
-      <% end %>
+                  <li><a href="">Reply</a></li>
+                  <li><a href="">Share</a></li>
+                  <li>
+                    <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </li>
+                </ul>
+               </div>
+            </div>
+            <hr />
+          </li>
+        <% end %>
+      </ul>
     </div>
      <aside class="large-3 columns hide-for-small">
       <p></p>

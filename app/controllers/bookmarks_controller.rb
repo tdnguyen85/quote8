@@ -1,13 +1,15 @@
 class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user! #, except: [:index, :show]
 
   def index
+
     if params[:tag]
-      @bookmarks = Bookmark.tagged_with(params[:tag])
+      @bookmarks = current_user.bookmarks.tagged_with(params[:tag]).order('position')
+
     else
-      @bookmarks = Bookmark.all
+      @bookmarks = current_user.bookmarks.order('position').reverse
     end
 
     respond_to do |format|
@@ -19,8 +21,11 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
-
     @bookmark = Bookmark.find(params[:id])
+    if current_user != @bookmark.user
+      render 'no_access'
+      return
+    end
 
     if params[:bookmarklet]
       render 'show_window'
@@ -77,11 +82,12 @@ class BookmarksController < ApplicationController
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
+    # :user_id, :value => current_user.id
+    @bookmark.user = current_user
 
     if params[:bookmarklet]
       @bookmark.save
       render 'show_window'
-      @bookmark.save
       return
     end
 
