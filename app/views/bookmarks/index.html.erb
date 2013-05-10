@@ -50,7 +50,7 @@
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
           <a href="/bookmarks/<%= bookmark.id %>" class>
-            <blockquote class="quote"><%= bookmark.quote %></blockquote>
+            <blockquote class="quote"><%= bookmark.quote[0..200] %>...</blockquote>
           </a>
           <ul class="inline-list">
             <li><a href="">Reply</a></li>
