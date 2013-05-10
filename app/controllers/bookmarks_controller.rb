@@ -4,11 +4,12 @@ class BookmarksController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
+
     if params[:tag]
-      @bookmarks = Bookmark.tagged_with(params[:tag]).order('position')
+      @bookmarks = current_user.bookmarks.tagged_with(params[:tag]).order('position')
 
     else
-      @bookmarks = Bookmark.order('position').reverse
+      @bookmarks = current_user.bookmarks.order('position').reverse
     end
 
     respond_to do |format|
