@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509012649) do
+ActiveRecord::Schema.define(:version => 20130510013624) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "url"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130509012649) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "position"
+    t.integer  "user_id"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130509012649) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "user_name"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

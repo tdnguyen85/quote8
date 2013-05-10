@@ -14,6 +14,10 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
+  config.authenticate_with do
+    redirect_to(main_app.frontlanding_path, flash: {warning: "You must be signed-in as an administrator to access that page"}) unless signed_in? && current_user.admin?
+  end
+
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
 
@@ -60,25 +64,25 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :taggings, :has_many_association         # Hidden 
-  #     configure :base_tags, :has_many_association         # Hidden 
-  #     configure :tag_taggings, :has_many_association         # Hidden 
-  #     configure :tags, :has_many_association         # Hidden 
+  #     configure :taggings, :has_many_association         # Hidden
+  #     configure :base_tags, :has_many_association         # Hidden
+  #     configure :tag_taggings, :has_many_association         # Hidden
+  #     configure :tags, :has_many_association         # Hidden
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :url, :string 
-  #     configure :title, :string 
-  #     configure :quote, :text 
-  #     configure :retrieved_on, :date 
-  #     configure :published_on, :date 
-  #     configure :author_first_name, :string 
-  #     configure :author_last_name, :string 
-  #     configure :publisher, :string 
-  #     configure :string, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :url, :string
+  #     configure :title, :string
+  #     configure :quote, :text
+  #     configure :retrieved_on, :date
+  #     configure :published_on, :date
+  #     configure :author_first_name, :string
+  #     configure :author_last_name, :string
+  #     configure :publisher, :string
+  #     configure :string, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -114,25 +118,25 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :bookmarks, :has_many_association 
+  #     configure :bookmarks, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :user_name, :string 
+  #     configure :id, :integer
+  #     configure :email, :string
+  #     configure :password, :password         # Hidden
+  #     configure :password_confirmation, :password         # Hidden
+  #     configure :reset_password_token, :string         # Hidden
+  #     configure :reset_password_sent_at, :datetime
+  #     configure :remember_created_at, :datetime
+  #     configure :sign_in_count, :integer
+  #     configure :current_sign_in_at, :datetime
+  #     configure :last_sign_in_at, :datetime
+  #     configure :current_sign_in_ip, :string
+  #     configure :last_sign_in_ip, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :user_name, :string
 
   #   # Cross-section configuration:
 
