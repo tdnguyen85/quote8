@@ -2,6 +2,10 @@ Quote8::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  post '/send_email' => 'bookmarks#send_email'
+  # post '/bookmarks/send_email' => 'bookmarks#send_email'
+
+
   get 'bookmarks/new_window', to: "bookmarks#new_window"
 
   resources :bookmarks do
