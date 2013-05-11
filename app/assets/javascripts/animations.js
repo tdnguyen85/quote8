@@ -1,21 +1,31 @@
 $(document).ready(function() {
 
   $("#shake").mouseenter(function () {
-    $(this).effect("shake", { times:2 }, 500);
+    $(this).effect("shake", { times:2, distance: 3}, 500);
   });
 
-  $('#bookmarklet-button').hover(function(){
-    $('#bookmarklet-arrow').animate({
-      opacity: 1,
-      
-      top: '-62px'
-    }, 500);
-  }, function() {
-    $('#bookmarklet-arrow').animate({
-      opacity: 0,
+  $('#bookmarklet-container').hover(function(){
+    if (!$('#bookmarklet-arrow').is(':visible')){
+     $('#bookmarklet-arrow').fadeIn('slow');
+    }
+   }, function() {
+    $('#bookmarklet-arrow').fadeOut('slow');
 
-      top: '-62px'
-      }  , 300);
-  }); 
+   });
+
+
+  $('#show_more').on('click', function(event){
+    event.preventDefault();
+  $('#hidden').toggle('slow');
+  });
+
+  //   $('#bookmarklet-arrow').animate({
+  //     opacity: 1,    
+  //   }, 500);
+  // }, function() {
+  //   $('#bookmarklet-arrow').animate({
+  //     opacity: 0,
+  //     }  , 500);
+  // }); 
 
 });
