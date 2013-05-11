@@ -4,20 +4,18 @@ $(document).ready(function() {
     $(this).effect("shake", { times:2 }, 500);
   });
 
-  $('#button').hover(function(){
-    $('#arrow').animate({
+  $('#bookmarklet-button').hover(function(){
+    $('#bookmarklet-arrow').animate({
       opacity: 1,
-      width: '100px',
-      height: '200px',
-      top: '-100px'
+      
+      top: '-62px'
     }, 500);
   }, function() {
-    $('#arrow').animate({
+    $('#bookmarklet-arrow').animate({
       opacity: 0,
-      width: '1px',
-      height: '1px',
-      top: '120px'
-      }  , 500);
+
+      top: '-62px'
+      }  , 300);
   }); 
 
 });
