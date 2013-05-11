@@ -37,10 +37,21 @@
       <p class="email">Email me Info</p>
       <form action='/send_email' method='post'>
       <!-- <form action='/bookmarks/send_email' method='post'> -->
-
-        <div class="styleindent"><input type='email' name='to' placeholder='Email me this!'> <%= submit_tag 'Send' , :class => "btn btn-success" %></div>
+        <div><input type='email' name='to' placeholder='Email me this!'> <%= submit_tag 'Send' , :class => "btn btn-success" %></div>
       </form>
       </li>
+
+
+      <li>
+      <%= form_tag("/send_email", :method => "post") do %>
+        <%= label_tag(:q, "Email me Info:") %>
+        <%= email_field_tag(:to) %>
+        <%= hidden_field_tag 'id', params[:id] %>
+        <%= submit_tag("Send") %>
+      <% end %>
+      </li>
+
+
     </ul>
     <div class="right">
       <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |

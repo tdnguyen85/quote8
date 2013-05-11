@@ -114,8 +114,9 @@ class BookmarksController < ApplicationController
 
   def send_email
     @to = params[:to]
-    @bookmark = Bookmark.find(params[:id])
-    Exportdata.form_email(@to).deliver
+    @id = params[:id]
+    @bookmark = Bookmark.find(@id)
+    Exportdata.form_email(@to,@id).deliver
   end
 
 end
