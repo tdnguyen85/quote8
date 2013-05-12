@@ -3,9 +3,15 @@
     <blockquote class="quote">
       <%= @bookmark.quote %>
     </blockquote>
-    <div class="right">
+    <div>
+      <span class="left">
+        <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+        <%= link_to 'Back', bookmarks_path %>
+      </span>
+      <span class="right">
       <a href="#" data-reveal-id="apa" class="small button">APA</a>
       <a href="#" data-reveal-id="mla" class="small button">MLA</a>
+      </span>
     </div>
     <hr>
   </div>
@@ -15,39 +21,53 @@
   <div class="large-8 columns">
     <h4><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a>
     </h4>
-    <br>
-    <a href="<%= @bookmark.url %>" class="secondary small button right">View Original Page &rarr;</a>
+    <br />
+    <br />
+    <a href="<%= @bookmark.url %>" class="secondary small button left">View Original Page &rarr;</a>
+    <ul class="tags right">
+      <% @bookmark.tag_list.map do |t| %>
+      <li class="tag"><%= link_to t, tag_path(t) %></li>
+      <% end %>
+    </ul>
    </div>
 
   <div class="large-4 columns">
     <ul class="small-block-grid-2">
       <li>Saved on:<br><%= @bookmark.retrieved_on %></li>
-      <li>Published on:<br><%= @bookmark.published_on %></li> <li>
+      <% if @bookmark.published_on == @bookmark.retrieved_on %>
+      <li></li>
+      <% else %>
+      <li>Published on:<br><%= @bookmark.published_on %></li>
+      <% end %>
+      <% if  (@bookmark.author_first_name == true) && (@bookmark.author_last_name == true) %>
+      <li>
         Author:<br><%= @bookmark.author_first_name %><br><%= @bookmark.author_last_name %>
       </li>
+      <% else %>
+      <li></li>
+      <% end %>
+      <% if @bookmark.publisher == true %>
       <li>
         Publisher:<br><%= @bookmark.publisher %>
       </li>
-       <li>Tags: <%= raw @bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
+      <% else %>
+      <li></li>
+      <% end %>
+
+
       <li>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.heroku.com" data-lang="en" data-text="<%= @bookmark.quote %>" >Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @bookmark.url %>" data-lang="en" data-text="<%= @bookmark.quote %>" >Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </li>
       <li>
       <%= form_tag("/send_email", :method => "post") do %>
-        <%= label_tag(:q, "Email me Info:") %>
+        <%= label_tag(:q, "Email this quote:") %>
         <%= email_field_tag(:to) %>
         <%= hidden_field_tag 'id', params[:id] %>
         <%= submit_tag("Send") %>
       <% end %>
       </li>
-
-
     </ul>
-    <div class="right">
-      <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
-      <%= link_to 'Back', bookmarks_path %>
-    </div>
   </div>
 </div>
 

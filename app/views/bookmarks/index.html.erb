@@ -1,11 +1,14 @@
 <div class="row">
   <div class="large-3 columns ">
       <h6><a href="#"><%= current_user.email %></a></h6>
+      <h6>You have <%= @bookmark_count %> quote(s) <%= @particular_tag %>.</h6>
+      <hr />
         <% tag_cloud Bookmark.tag_counts, %w[s m l] do |tag, css_class| %>
           <ul class="tags">
            <li class="tag"> <%= link_to tag.name, tag_path(tag.name), class: css_class %>
           </li>
         <% end %>
+        <hr />
   </div>
 
   <div class="large-9 columns" >

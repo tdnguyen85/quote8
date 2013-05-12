@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :bookmark_id, :user_name, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   has_many :bookmarks
+  acts_as_tagger
+  acts_as_taggable
 
   validates :email, :presence => true
   validates :email, :uniqueness => true

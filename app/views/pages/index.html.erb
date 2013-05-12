@@ -55,7 +55,37 @@
       <div class="row">
         <div class="large-6 large-centered columns about-section">
           <h3>About Quote8</h3>
-          Using, Quote8, you can grab any quotes from the web so that you can archive them, share them, and include them in your research papers.</p>
+          <p>
+          Using Quote8, you can grab any quotes from the web so that you can archive them, share them, and include them in your research papers.  Quote8 can maximize your productivity by storing your quotes in our database to free up your time so that you can browse for content efficiently.  Our tagging system enables your quotes to be retrieved base on your own categorization preferences.  </p>
+        </div>
+      </div>
+      <hr />
+      <div class ="row">
+        <div class="large-6 large-centered columns about-section">
+          <h3>Trending Quote8 Tags</h3>
+          <br />
+            <% tag_cloud Bookmark.tag_counts, %w[s m l] do |tag, css_class| %>
+              <ul class="tags">
+               <li class="tag"> <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+              </li>
+            <% end %>
+            <h6> quotes have been saved using Quote8.</h6>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="large-6 large-centered columns about-section">
+          <h3>Quote8 Core Team Members</h3>
+          <div class="large-centered">
+            <p>
+
+                <div>Traci Weiss :: Front-End Developer</div>
+                <div>Bryan Chang :: Front-End Developer</div>
+                <div>Jonathan Lai :: Back-End Developer</div>
+                <div>Tan Nguyen :: Back-End Developer</div>
+
+            </p>
+          </div>
         </div>
       </div>
 

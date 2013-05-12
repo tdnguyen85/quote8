@@ -21,9 +21,12 @@ class BookmarksController < ApplicationController
   def index
 
     if params[:tag]
+      @bookmark_count = current_user.bookmarks.tagged_with(params[:tag]).count
+      @particular_tag = "tagged as " + params[:tag]
       @bookmarks = current_user.bookmarks.tagged_with(params[:tag]).order('position').reverse
 
     else
+      @bookmark_count = current_user.bookmarks.count
       @bookmarks = current_user.bookmarks.order('position').reverse
     end
 

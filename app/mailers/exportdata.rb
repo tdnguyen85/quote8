@@ -3,7 +3,7 @@ class Exportdata < ActionMailer::Base
 
   def form_email(to, id)
     @bookmark = Bookmark.find(id)
-    mail(:to => to, :subject => "My Quote8on for me!")
+    mail(:to => to, :subject => "My Quote8ion for me!")
   end
 
 end
