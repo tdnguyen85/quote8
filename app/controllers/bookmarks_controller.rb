@@ -3,6 +3,21 @@ class BookmarksController < ApplicationController
   # GET /bookmarks.json
   before_filter :authenticate_user! #, except: [:index, :show]
 
+
+  def search
+    if params[:query]
+      q = params[:query]
+      @bookmarks = current_user.bookmarks.where(["quote LIKE ? OR title LIKE ?", "%#{q}%", "%#{q}%"])
+        render 'index'
+    else
+      @bookmarks = current_user.bookmarks.order('position').reverse
+        render 'index'
+    end
+  end
+
+
+
+
   def index
 
     if params[:tag]
