@@ -10,9 +10,10 @@
  *
  *= require_self
  *= require foundation.css
- *= require bookmarks.css.scss
  *= require mystyle.css
  *= require_tree .
+ *= require bookmarks.css.scss
+
  */
 
 body{
