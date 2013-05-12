@@ -28,8 +28,8 @@
     <%= f.text_field :tag_list %>
   </div>
   <div class="field">
-    <%= f.label :retrieved_on %><br />
-    <%= f.date_select :retrieved_on %>
+    <%= f.label "Retrieved Today" %><br />
+    <%= f.hidden_field :retrieved_on %>
   </div>
   <div class="field">
     <%= f.label :published_on %><br />

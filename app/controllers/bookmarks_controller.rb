@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
   def index
 
     if params[:tag]
-      @bookmarks = current_user.bookmarks.tagged_with(params[:tag]).order('position')
+      @bookmarks = current_user.bookmarks.tagged_with(params[:tag]).order('position').reverse
 
     else
       @bookmarks = current_user.bookmarks.order('position').reverse
@@ -131,7 +131,7 @@ class BookmarksController < ApplicationController
 
   def sort
     params[:bookmark].each_with_index do |id, index|
-      Faq.update_all({position: index+1}, {id: id})
+      Bookmark.update_all({position: index+1}, {id: id})
     end
     render nothing: true
   end
