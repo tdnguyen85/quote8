@@ -1,4 +1,4 @@
-//bookmarklet code
+//bookmarklet code . Extra comment
 
 // javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/jsbookmarklet.js?q=Math.random()';})();
 
@@ -47,7 +47,7 @@
 
        selectedText = getSelText();
 
-     var NWin = window.open('http://localhost:3000/bookmarks/new?text= ' + encodeURIComponent(selectedText) + '&title=' + encodeURIComponent(doctitle) + '&url=' + encodeURIComponent(doclocation) + '&bookmarklet=1' , '', 'height=600,width=450');
+     var NWin = window.open('http://quote8.herokuapp.com/bookmarks/new?text= ' + encodeURIComponent(selectedText) + '&title=' + encodeURIComponent(doctitle) + '&url=' + encodeURIComponent(doclocation) + '&bookmarklet=1' , '', 'height=600,width=450');
 
      if (window.focus)
      {
