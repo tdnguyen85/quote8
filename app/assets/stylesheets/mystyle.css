@@ -1,8 +1,4 @@
-body {
- padding-bottom: 20px;
- color: #F1762F;
- font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 button, .button {
  background-color: #6BC3D7;
  border-radius: 25px;
@@ -13,19 +9,19 @@ button:hover {
 	background-color: #6BC3D7;
 }
 .user_remember_me {
-	display: inline;
+	float: left;
 }
 .top-bar-section li a:not(.button) {
  background-color: #4B5358;
  color: #F1762F;
 }
 
-/*body {
- padding-bottom: 20px;
+body {
+/* padding-bottom: 20px;
  color: #F1762F;
- font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+*/ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-*/
+
 .top-bar {
 	background-color: #4B5358;
 	border-bottom: 5px solid #6BC3D7;
@@ -35,19 +31,28 @@ button:hover {
 	color: white;
 }
 fieldset {
-	 border-radius: 20px;
-	 margin: 20px;
+	color: #F1762F;
+	border-radius: 20px;
+	margin: 20px;
 }
 
 fieldset legend {
 	text-align: center;
 }
 .member_login {
-  color: #F1762F;
+  color: white;
   padding-left: 20px;
   margin-bottom: 5px;
 }
-
+.about-section h3 {
+  text-align: center;
+}
+.about-section p {
+	text-align: justify;
+}
+.checkbox label {
+	display: inline;
+}
 input {
 	background-color: #6BC3D7;
   color: white;
@@ -68,8 +73,15 @@ p {
 	margin: 20px;
 }
 #show_more {
-	border-radius: 0;
-
+/*	border-radius: 10px;
+	padding: 7px;
+	background-color: #4B5358; 
+	font-weight: normal;*/
+	width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #2f2f2f;
 }
 #user_nav {
 	padding-right: 20px;
@@ -79,14 +91,16 @@ p {
 	display: inline;
 }
 .about-section h3 {
-color: #4B5358;
+ color: #4B5358;
 }
-.grey {
-	background-color: #f2f2f2;
+.sign-in-btn {
+ float:right;
 }
+
 .link_buttons {
-	margin: 20px;
-	text-align: center;
+	margin: 10px;
+/*	text-align: center;*/
+
 }
 #site-name {
 	float: left;
@@ -98,3 +112,22 @@ color: #4B5358;
 .logo-container {
 	position: relative;
 }
+.actions {
+	float: right;
+}
+
+#error_explanation h2 {
+	color: grey;
+	font-size: 1.5em;
+}
+div.tooltip-arrow-up {
+      width: 0px;
+      height: 0px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #2f2f2f;
+}
+
+/*.screen-shot-img {
+	margin-top: 20px;
+}*/
