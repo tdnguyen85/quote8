@@ -1,4 +1,4 @@
-//bookmarklet code
+//bookmarklet code . Extra comment
 
 // javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/jsbookmarklet.js?q=Math.random()';})();
 
