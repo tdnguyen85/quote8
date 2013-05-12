@@ -3,5 +3,7 @@ class Bookmark < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable
   acts_as_list
+
+  validates :quote, :title, :url, :presence => true
 end
 

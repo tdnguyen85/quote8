@@ -12,6 +12,7 @@
  *= require foundation.css
  *= require bookmarks.css.scss
  *= require mystyle.css
+ *= require_tree .
  */
 
 body{

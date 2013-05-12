@@ -1,7 +1,10 @@
-<h1>New Quote8ion</h1>
-
-<%= render 'form' %>
-
-<a href="JavaScript:window.close()">Close</a>
-
-<%= link_to 'Goto Quote8', bookmarks_path, :target => '_blank'%>
+<div class="row">
+	<div class="large-5 columns">
+		<fieldset>
+	   <legend>New Quote8ion</legend>
+			<%= render 'form' %>
+			<a href="JavaScript:window.close()">Close</a>
+	  </fieldset>
+	  <div class="link_buttons"><%= link_to 'Goto Quote8', bookmarks_path, :target => '_blank'%></div>
+  </div>
+</div>

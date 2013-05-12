@@ -14,55 +14,51 @@
   <link rel="stylesheet" href="assets/foundation.css">
   <link rel="stylesheet" href="assets/mystyle.css">
 
-
   <script src="js/vendor/custom.modernizr.js"></script>
-
+  <script src="/assets/animation.js"></script>
 </head>
-<body>
 
-  <!-- Main Page Content and Sidebar -->
-
-  <div class="row">
-    <!-- Contact Details -->
-    <div class="large-7 columns">
-      <h3>Quote8</h3>
-      <p>Quickly store your favorite quotes from all over.</p>
-      <img src="../assets/screen2.png">
-      <div class="section-container tabs" data-section>
+  <body>
+    <!-- Main Page Content -->
+    <div class="row">
+      <div class="large-4 large-centered columns">
+        <%= render 'bookmarklet' %>
       </div>
     </div>
+    <hr />
+    <div class="row">
+      <div class="large-8 large-centered columns">
+        <p>Highlight the text you want to save, then just click on the Quote8 bookmarklet!</p>
+        <img src="../assets/screenshot2.png">
+        <div class="section-container tabs" data-section>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- login Form -->
+    <div class="row">
+      <div class="large-6 large-centered columns">
+        <form  action="../users" method="post">
+          <fieldset>
+            <legend>Signup</legend>
+            <input type="text" name="user[email]" placeholder="Your Email">
+            <input type="password" name="user[password]" placeholder="Password">
+            <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
+            <button class="sign_up" type="submit">Sign Up</button>
+            <p>Already a member? <a href="/users/sign_in">Log In</a>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- End form -->
+      <hr />
+      <div class="row">
+        <div class="large-6 large-centered columns about-section">
+          <h3>About Quote8</h3>
+          Using, Quote8, you can grab any quotes from the web so that you can archive them, share them, and include them in your research papers.</p>
+        </div>
+      </div>
 
-    <div class="arrow">
-    <img src="assets/arrow_f1762fsm.png" />
-
-      <button class="round"><img src="assets/quote8_logo_white.png" width="30px" /><a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/jsbookmarklet.js?q=Math.random()';})();"> Quotelet</a></button>
-   
- 
-    </div> 
-  
-    <!-- Sidebar Form -->
-<div> 
-
-  <div class="large-5 columns">
-
-    <form  action="../users" method="post">
-      <fieldset>
-      <legend>Signup</legend>
-      <input type="text" name="user[email]" placeholder="Your Email">
-      <input type="password" name="user[password]" placeholder="Password">
-      <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
-      <button class="sign_up" type="submit">Sign Up</button>
-      <p>Already a member? <a href="/users/sign_in">Log In</a>
-      </fieldset>
-    </form>
-  </div>
-    <!-- End Sidebar -->
- </div>
-</div>
-
-  <!-- End Main Content and Sidebar -->
-
-
-  <!-- Footer -->
-</body>
+  <!-- End Main Content -->
+  </body>
 </html>

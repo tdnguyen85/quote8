@@ -23,19 +23,12 @@
     <%= f.label :quote %><br />
     <%= f.text_area :quote %>
   </div>
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-  <div class="field">
-    <%= f.label :retrieved_on %><br />
-    <%= f.date_select :retrieved_on %>
-  </div>
-  <div class="field">
-    <%= f.label :published_on %><br />
-    <%= f.date_select :published_on %>
-  </div>
-  <div class="field">
+
+<!-- hidden area on new quote form -->
+
+<button id="show_more">More Fields</button>
+  <div id="hidden">
+      <div class="field">
     <%= f.label :author_first_name %><br />
     <%= f.text_field :author_first_name %>
   </div>
@@ -44,10 +37,22 @@
     <%= f.text_field :author_last_name %>
   </div>
   <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field">
+    <%= f.label "Retrieved Today" %><br />
+    <%= f.hidden_field :retrieved_on %>
+  </div>
+  <div class="field">
+    <%= f.label :published_on %><br />
+    <%= f.date_select :published_on %>
+  </div>
+  <div class="field">
     <%= f.label :publisher %><br />
     <%= f.text_field :publisher %>
   </div>
-
+</div>
 
   <div class="field">
     <%= hidden_field_tag "bookmarklet", "1" if params[:bookmarklet] %>

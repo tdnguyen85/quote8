@@ -1,0 +1,39 @@
+
+#bookmarklet-container {
+  positon: relative;
+  margin: auto;
+  width: 300px;
+
+}
+
+#bookmarklet-arrow {
+	display: none;
+  position: absolute;
+  left: -90px;
+  top: -62px;
+  z-index: 1;
+}
+
+#bookmarklet-button {
+	margin-top: 20px;
+  font-size: 36px;
+  padding: 45px;
+}
+#bookmarklet-tagline {
+	margin: 0px 0px 10px 0px;
+}
+
+#hidden {
+	display: none;
+}
+
+.title-area{
+	width: 160px;
+}
+
+@media only screen and (max-width: 480px;) {
+
+	#bookmarklet-container {
+		display: none;
+	}
+}
