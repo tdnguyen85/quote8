@@ -9,7 +9,7 @@
 #bookmarklet-arrow {
 	display: none;
   position: absolute;
-  left: -90px;
+  left: -175px;
   top: -62px;
   z-index: 1;
 }
@@ -20,7 +20,9 @@
   padding: 45px;
 }
 #bookmarklet-tagline {
-	margin: 0px 0px 10px 0px;
+	margin: 0px;
+  text-align: center;
+  color: #F1762F;
 }
 
 #hidden {
@@ -31,9 +33,12 @@
 	width: 160px;
 }
 
-@media only screen and (max-width: 480px;) {
+@media only screen and (max-width: 480px) {
 
 	#bookmarklet-container {
 		display: none;
 	}
+  #bookmarklet-tagline {
+    display: none;
+  }
 }
