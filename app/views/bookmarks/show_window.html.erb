@@ -1,21 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @bookmark.title %>
-</p>
-
-<p>
-  <b>Quote:</b>
-  <%= @bookmark.quote %>
-</p>
-
-
-<a href="JavaScript:window.close()">Close</a>
-
-<%= link_to 'Goto Quote8', bookmarks_path, :target => '_blank'%>
-
-
-<script>
-setTimeout('self.close();',15000);
-</script>
+<div class="row">
+  <div class="large-5 columns">
+	  <fieldset>
+	  	<p id="notice"><%= notice %></p>
+      <legend>Saving Your Quote</legend>
+      <p>
+      	<b>Title:</b>
+      	<%= @bookmark.title %>
+      </p>
+      <p>
+      	<b>Quote:</b>
+      	<%= @bookmark.quote %>
+      </p>
+      <a href="JavaScript:window.close()">Close</a>
+      <script>
+      setTimeout('self.close();',15000);
+      </script>
+    </fieldset>
+    <%= link_to 'Goto Quote8', bookmarks_path, :target => '_blank'%>
+  </div>
+</div>

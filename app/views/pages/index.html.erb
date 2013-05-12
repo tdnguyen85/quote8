@@ -16,50 +16,48 @@
 
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="/assets/animation.js"></script>
-
 </head>
-<body>
 
-  <!-- Main Page Content and Sidebar -->
-  <div class="row"> 
-    <div class="large-4 large-centered columns">
-    <%= render 'bookmarklet' %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="large-8 large-centered columns">
-        <img src="../assets/screen2.png">
-      <div class="section-container tabs" data-section>
+  <body>
+    <!-- Main Page Content -->
+    <div class="row">
+      <div class="large-4 large-centered columns">
+        <%= render 'bookmarklet' %>
       </div>
     </div>
-  </div>
-
-   
-
-    <!-- Sidebar Form -->
-  <div class="row"> 
-
-    <div class="large-6 large-centered columns">
-
-      <form  action="../users" method="post">
-        <fieldset>
-        <legend>Signup</legend>
-        <input type="text" name="user[email]" placeholder="Your Email">
-        <input type="password" name="user[password]" placeholder="Password">
-        <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
-        <button class="sign_up" type="submit">Sign Up</button>
-        <p>Already a member? <a href="/users/sign_in">Log In</a>
-        </fieldset>
-      </form>
+    <hr />
+    <div class="row">
+      <div class="large-8 large-centered columns">
+        <img src="../assets/screenshot1.png">
+        <div class="section-container tabs" data-section>
+        </div>
+      </div>
     </div>
-      <!-- End Sidebar -->
-   </div>
+    <hr />
+    <!-- login Form -->
+    <div class="row">
+      <div class="large-6 large-centered columns">
+        <form  action="../users" method="post">
+          <fieldset>
+            <legend>Signup</legend>
+            <input type="text" name="user[email]" placeholder="Your Email">
+            <input type="password" name="user[password]" placeholder="Password">
+            <input type="password" name="user[password_confirmation]" placeholder="Confirm Password">
+            <button class="sign_up" type="submit">Sign Up</button>
+            <p>Already a member? <a href="/users/sign_in">Log In</a>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- End form -->
+      <hr />
+      <div class="row">
+        <div class="large-6 large-centered columns about-section">
+          <h3>About Quote8</h3>
+          Using, Quote8, you can grab any quotes from the web so that you can archive them, share them, and include them in your research papers.</p>
+        </div>
+      </div>
 
-
-  <!-- End Main Content and Sidebar -->
-
-
-  <!-- Footer -->
-</body>
+  <!-- End Main Content -->
+  </body>
 </html>
