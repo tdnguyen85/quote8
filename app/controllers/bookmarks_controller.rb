@@ -3,6 +3,21 @@ class BookmarksController < ApplicationController
   # GET /bookmarks.json
   before_filter :authenticate_user! #, except: [:index, :show]
 
+
+  def search
+    if params[:query]
+      q = params[:query]
+      @bookmarks = current_user.bookmarks.where(["quote LIKE ? OR title LIKE ?", "%#{q}%", "%#{q}%"])
+        render 'index'
+    else
+      @bookmarks = current_user.bookmarks.order('position').reverse
+        render 'index'
+    end
+  end
+
+
+
+
   def index
 
     if params[:tag]
@@ -18,8 +33,6 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # GET /bookmarks/1
-  # GET /bookmarks/1.json
   def show
     @bookmark = Bookmark.find(params[:id])
     if current_user != @bookmark.user
@@ -37,18 +50,7 @@ class BookmarksController < ApplicationController
       format.json { render json: @bookmark }
     end
   end
-  # def show_window
-  #   @bookmark = Bookmark.find(params[:id])
 
-  #   respond_to do |format|
-  #     format.html # show.html.erb
-  #     format.json { render json: @bookmark }
-  #   end
-  # end
-
-
-  # GET /bookmarks/new
-  # GET /bookmarks/new.json
   def new
     @bookmark = Bookmark.new :url => params[:url], :title => params[:title], :quote => params[:text]
 
@@ -64,21 +66,12 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # def new_window
-  #   @bookmark = Bookmark.new :url => params[:url], :title => params[:title], :quote => params[:text]
-  #   respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @bookmark }
-  #   end
-  # end
 
-  # GET /bookmarks/1/edit
   def edit
     @bookmark = Bookmark.find(params[:id])
   end
 
-  # POST /bookmarks
-  # POST /bookmarks.json
+
   def create
     @bookmark = Bookmark.new(params[:bookmark])
     # :user_id, :value => current_user.id
@@ -101,8 +94,7 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # PUT /bookmarks/1
-  # PUT /bookmarks/1.json
+
   def update
     @bookmark = Bookmark.find(params[:id])
 
@@ -117,8 +109,7 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # DELETE /bookmarks/1
-  # DELETE /bookmarks/1.json
+
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
@@ -135,4 +126,12 @@ class BookmarksController < ApplicationController
     end
     render nothing: true
   end
+
+  def send_email
+    @to = params[:to]
+    @id = params[:id]
+    @bookmark = Bookmark.find(@id)
+    Exportdata.form_email(@to,@id).deliver
+  end
+
 end

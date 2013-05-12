@@ -14,7 +14,10 @@
       </div>
      </div>
   </div>
+
   <div class="large-9 columns" >
+    <%= render 'search' %>
+
     <% @bookmarks.each do |bookmark| %>
       <div class="row" id="bookmark_<%= bookmark.id %>">
         <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>

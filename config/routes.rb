@@ -2,7 +2,14 @@ Quote8::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  devise_for :users
+
+  post '/send_email' => 'bookmarks#send_email'
+  # post '/bookmarks/send_email' => 'bookmarks#send_email'
+
   get 'bookmarks/new_window', to: "bookmarks#new_window"
+
+  get 'bookmarks/search' => 'bookmarks#search', :as => :search
 
   resources :bookmarks do
     collection { post :sort }
@@ -12,13 +19,11 @@ Quote8::Application.routes.draw do
 
   get 'bookmarks/:id', to: "bookmarks#show_window"
 
-  devise_for :users
-
   root :to => 'pages#index', :as => :frontlanding
 
   get '/about' => 'pages#about', :as => :about
 
-
+  # get '/search' => 'bookmarks#search', :as => :search
 
 
   # The priority is based upon order of creation:
