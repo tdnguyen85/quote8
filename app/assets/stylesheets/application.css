@@ -13,3 +13,7 @@
  *= require bookmarks.css.scss
  *= require mystyle.css
  */
+
+body{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

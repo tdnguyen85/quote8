@@ -47,7 +47,7 @@
 
        selectedText = getSelText();
 
-     var NWin = window.open('http://localhost:3000/bookmarks/new?text= ' + encodeURIComponent(selectedText) + '&title=' + encodeURIComponent(doctitle) + '&url=' + encodeURIComponent(doclocation) + '&bookmarklet=1' , '', 'height=400,width=400');
+     var NWin = window.open('http://localhost:3000/bookmarks/new?text= ' + encodeURIComponent(selectedText) + '&title=' + encodeURIComponent(doctitle) + '&url=' + encodeURIComponent(doclocation) + '&bookmarklet=1' , '', 'height=600,width=600');
 
      if (window.focus)
      {

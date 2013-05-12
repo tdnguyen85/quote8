@@ -1,32 +1,34 @@
 <div class="row">
   <div class="large-3 columns ">
-    <div class="panel">
-      <a href="/user"><img src="http://www.scottlab.com/uploads/images/blank_profile.png"></a>
-      <h5><a href="#">John Doe</a></h5>
-        <div id="tag_cloud" class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-          <% tag_cloud Bookmark.tag_counts, %w[s m l] do |tag, css_class| %>
-        <section class="section">
-          <h5 class="title">
-            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-          </h5>
-        </section>
-          <% end %>
-      </div>
-     </div>
+      <h6><a href="#"><%= current_user.email %></a></h6>
+        <% tag_cloud Bookmark.tag_counts, %w[s m l] do |tag, css_class| %>
+          <ul class="tags">
+           <li class="tag"> <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+          </li>
+        <% end %>
   </div>
   <div class="large-9 columns" id="bookmarks" data-update-url="<%= sort_bookmarks_url %>">
     <% @bookmarks.each do |bookmark| %>
       <div class="row" id="bookmark_<%= bookmark.id %>">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
+        <div class="large-12 columns">
           <a href="/bookmarks/<%= bookmark.id %>" class>
-            <blockquote class="quote"><%= bookmark.quote[0..200] %>...</blockquote>
+            <blockquote class="quote listview">
+              <% if bookmark.quote.length > 140 %>
+                <%= bookmark.quote[0..140] %>...
+              <% else %>
+                <%= bookmark.quote %>
+              <% end %>
+            </blockquote>
           </a>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
+        <div class="large-8">
+            <ul class="tags">
+              <% bookmark.tag_list.each do |t| %>
+              <li class="tag"><%= link_to t, tag_path(t) %></li>
+              <% end %>
+            </ul>
+        </div>
+          <ul class="inline-list right">
             <li><a href="">Share</a></li>
-            <li>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></li>
-                <%= bookmark.position %>
             <li>
             <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
             </li>

@@ -27,9 +27,10 @@ h4{
 
 #tag_cloud {
   line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.4em; }
+  .s { font-size: 0.7em; }
+  .m { font-size: 0.9em; }
+  .l { font-size: 1.1em; }
+  text-align: center;
 }
 
 .tagist{
@@ -37,17 +38,14 @@ h4{
   margin-left: 0;
 }
 
-.tags{
-  line-height: 30px;
-  border: 1px dashed #222 ;
-  border-radius: 10px;
-}
-
-
 .quote{
   color: #222;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 27px;
+}
+
+.listview{
+  font-size: 21px;
 }
 
 a blockquote:hover{
@@ -81,4 +79,63 @@ blockquote:after{
 
 [class*="block-grid-"] > li{
   height: 100px;
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  display: inline;
+}
+
+.tags li {
+  float: left;
+}
+
+.tag {
+  font-size: 12px;
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: $light_blue;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: $light_blue;
 }

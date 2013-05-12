@@ -6,13 +6,14 @@ button, .button {
 }
 
 .top-bar-section li a:not(.button) {
- background-color: #4B5358; 
+ background-color: #4B5358;
  color: #F1762F;
 }
 
 body {
  padding-bottom: 20px;
  color: #F1762F;
+ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .top-bar {
