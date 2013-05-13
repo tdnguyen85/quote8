@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!
 
 
   def search
@@ -21,13 +21,11 @@ class BookmarksController < ApplicationController
   def index
     @current_user_tags = Array.new
 
-    if current_user
       current_user.bookmarks.each do |item|
         item.tag_list.each do |tag|
           @current_user_tags << tag
         end
       end
-    end
 
     @uniq_tag_list = @current_user_tags.uniq
 
