@@ -5,12 +5,15 @@ button, .button {
  margin-top: 0px;
  border-style: none;
 }
+
 button:hover {
 	background-color: #6BC3D7;
 }
+
 .user_remember_me {
 	float: left;
 }
+
 .top-bar-section li a:not(.button) {
  background-color: #4B5358;
  color: #F1762F;
@@ -27,9 +30,11 @@ body {
 	border-bottom: 5px solid #6BC3D7;
 	height: 55px;
 }
+
 .top-bar a {
 	color: white;
 }
+
 fieldset {
 	color: #F1762F;
 	border-radius: 20px;
@@ -39,20 +44,25 @@ fieldset {
 fieldset legend {
 	text-align: center;
 }
+
 .member_login {
   color: white;
   padding-left: 20px;
   margin-bottom: 5px;
 }
-.about-section h3 {
+
+.about-section h3{
   text-align: center;
 }
+
 .about-section p {
 	text-align: justify;
 }
+
 .checkbox label {
 	display: inline;
 }
+
 input {
 	background-color: #6BC3D7;
   color: white;
@@ -61,19 +71,22 @@ input {
   border-radius: 8px;
   display: inline-block;
   padding: 5px;
-
 }
+
 footer {
 	color: #4B5358;
 }
+
 .round a{
 	color: white;
 }
+
 p {
 	margin: 20px;
 }
+
 #show_more {
-/*	border-radius: 10px;
+	border-radius: 20px;
 	padding: 7px;
 	background-color: #4B5358;
 	font-weight: normal;*/
@@ -82,7 +95,10 @@ p {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid #2f2f2f;
+	background-color: #4B5358;
+	font-weight: normal;
 }
+
 #user_nav {
 	padding-right: 20px;
 }
@@ -93,25 +109,28 @@ p {
 .about-section h3 {
  color: #4B5358;
 }
+
 .sign-in-btn {
  float:right;
 }
 
 .link_buttons {
 	margin: 10px;
-/*	text-align: center;*/
-
 }
+
 #site-name {
 	float: left;
 	margin-left: 10px;
 }
+
 #site-logo {
 	float: left;
 }
+
 .logo-container {
 	position: relative;
 }
+
 .actions {
 	float: right;
 }
@@ -120,6 +139,7 @@ p {
 	color: grey;
 	font-size: 1.5em;
 }
+
 div.tooltip-arrow-up {
       width: 0px;
       height: 0px;
@@ -127,6 +147,7 @@ div.tooltip-arrow-up {
       border-right: 5px solid transparent;
       border-bottom: 5px solid #2f2f2f;
 }
+
 .team {
   width: 300px;
   margin: auto;
