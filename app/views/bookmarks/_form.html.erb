@@ -23,7 +23,10 @@
     <%= f.label :quote %><br />
     <%= f.text_area :quote %>
   </div>
-
+  <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
 <!-- hidden area on new quote form -->
 
 <button id="show_more">more</button>
@@ -37,12 +40,8 @@
     <%= f.text_field :author_last_name %>
   </div>
   <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-  <div class="field">
     <%= f.label "Retrieved Today" %><br />
-    <%= f.hidden_field :retrieved_on %>
+    <%= f.date_select :retrieved_on %>
   </div>
   <div class="field">
     <%= f.label :published_on %><br />

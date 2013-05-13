@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
-  before_filter :authenticate_user! #, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show]
 
 
   def search
@@ -19,6 +19,15 @@ class BookmarksController < ApplicationController
 
 
   def index
+    @current_user_tags = Array.new
+
+    current_user.bookmarks.each do |item|
+      item.tag_list.each do |tag|
+        @current_user_tags << tag
+      end
+    end
+
+    @uniq_tag_list = @current_user_tags.uniq
 
     if params[:tag]
       @bookmark_count = current_user.bookmarks.tagged_with(params[:tag]).count
@@ -38,6 +47,8 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find(params[:id])
+    @form_regex = "[a-zA-Z]"
+    @user_tags = current_user.bookmarks
     if current_user != @bookmark.user
       render 'no_access'
       return
