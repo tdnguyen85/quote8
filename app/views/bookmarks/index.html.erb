@@ -5,7 +5,7 @@
       <h6>You have <%= @bookmark_count %> quote(s) <%= @particular_tag %>.</h6>
       <hr />
       <% @uniq_tag_list.each do |t| %>
-        <ul class="tags right">
+        <ul class="tags left">
           <li class="tag">
             <%= link_to t, tag_path(t) %>
           </li>
