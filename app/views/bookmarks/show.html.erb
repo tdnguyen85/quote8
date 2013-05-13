@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="large-12 columns">
     <blockquote class="quote">
@@ -39,14 +40,14 @@
       <% else %>
       <li>Published on:<br><%= @bookmark.published_on %></li>
       <% end %>
-      <% if  (@bookmark.author_first_name == true) && (@bookmark.author_last_name == true) %>
+      <% if  (@bookmark.author_first_name == @form_regex) && (@bookmark.author_last_name == @form_regex) %>
       <li>
         Author:<br><%= @bookmark.author_first_name %><br><%= @bookmark.author_last_name %>
       </li>
       <% else %>
       <li></li>
       <% end %>
-      <% if @bookmark.publisher == true %>
+      <% if @bookmark.publisher.include?(@form_regex) %>
       <li>
         Publisher:<br><%= @bookmark.publisher %>
       </li>
