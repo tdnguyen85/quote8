@@ -9,8 +9,8 @@
 #bookmarklet-arrow {
 	display: none;
   position: absolute;
-  left: -150px;
-  top: -75px;
+  left: 25px;
+  top: -30px;
   z-index: 1;
 }
 
