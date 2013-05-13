@@ -21,9 +21,11 @@ class BookmarksController < ApplicationController
   def index
     @current_user_tags = Array.new
 
-    current_user.bookmarks.each do |item|
-      item.tag_list.each do |tag|
-        @current_user_tags << tag
+    if current_user
+      current_user.bookmarks.each do |item|
+        item.tag_list.each do |tag|
+          @current_user_tags << tag
+        end
       end
     end
 
