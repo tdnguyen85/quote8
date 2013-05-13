@@ -1,9 +1,11 @@
-<h3 class="marginleftindent">
-  An email was sent to <%= @to %> with the following Quote information
-</h3>
-<p>Website: <%= @bookmark.url %>.</p>
-<p>Title: <%= @bookmark.title %>.</p>
-<p>Quote: <%= @bookmark.quote %>.</p>
-
-
-<p class="marginleftindent"><%= link_to 'Back Bookmarks', '/bookmarks' %></p>
+<div class="row">
+	<div class="large-9 small-centered columns">
+		<h3 class="marginleftindent">
+			An email was sent to <%= @to %> with the following Quote information
+		</h3>
+		<p>Website: <%= @bookmark.url %>.</p>
+		<p>Title: <%= @bookmark.title %>.</p>
+		<p>Quote: <%= @bookmark.quote %>.</p>
+		<p class="marginleftindent"><%= link_to 'Back Bookmarks', '/bookmarks' %></p>
+	</div>
+</div>
