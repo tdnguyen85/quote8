@@ -75,7 +75,7 @@ p {
 #show_more {
 /*	border-radius: 10px;
 	padding: 7px;
-	background-color: #4B5358; 
+	background-color: #4B5358;
 	font-weight: normal;*/
 	width: 0px;
   height: 0px;
@@ -127,7 +127,10 @@ div.tooltip-arrow-up {
       border-right: 5px solid transparent;
       border-bottom: 5px solid #2f2f2f;
 }
-
+.team {
+  width: 300px;
+  margin: auto;
+}
 /*.screen-shot-img {
 	margin-top: 20px;
 }*/
