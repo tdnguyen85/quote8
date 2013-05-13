@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#bookmarks .handle {
-  font-size: 12px;
-  color: #777;
-  cursor: move;
-}
-
 $grey: #4B5358;
 $blue: #6BC3D7;
 $light_blue: #A8D7CF;
@@ -16,6 +10,24 @@ $orange: #F1762F;
 
 body{
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contents{
+  border-bottom: 1px dotted $grey;
+}
+
+.icon{
+  width: 33px;
+}
+
+.columns{
+  overflow:hidden;
+}
+
+#bookmarks .handle {
+  font-size: 12px;
+  color: #777;
+  cursor: move;
 }
 
 .row header{

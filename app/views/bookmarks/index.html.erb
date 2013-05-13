@@ -39,18 +39,16 @@
               <% end %>
             </blockquote>
           </a>
-        <div class="large-8 right">
-            <ul class="tags inline-list right">
+        <div class="large-8 left">
+            <ul class="tags inline-list left">
               <% bookmark.tag_list.each do |t| %>
               <li class="tag"><%= link_to t, tag_path(t) %></li>
               <% end %>
             </ul>
         </div>
-          <ul class="inline-list left">
-            <li>
-            <%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </li>
-          </ul>
+        <div class="right">
+          <%= link_to (image_tag 'trash.svg', class: 'icon'), bookmark, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'icon' %>
+        </div>
        </div>
       </div>
       <hr />
