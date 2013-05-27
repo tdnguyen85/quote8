@@ -11,6 +11,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'airbrake'
+
 end
 
 gem 'devise'
@@ -32,3 +34,5 @@ end
 gem 'jquery-rails'
 
 gem 'rails_admin'
+
+
